@@ -11,6 +11,9 @@ dependencies:
   - toolbar
   - webform
   - webform_ui
+  - config
+  - block
 
 themes:
   - seven
+  - survey3s_theme
