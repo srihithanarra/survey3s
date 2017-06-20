@@ -1,0 +1,19 @@
+name: Survey3s Theme
+type: theme
+description: Theme for survey3s profile
+base theme: seven
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+
+version: '8.3.3'
+core: '8.x'
+project: 'survey3s'
+datestamp: 1496858154
