@@ -1,0 +1,9 @@
+<?php
+/**
+ * Implements hook_install
+ */
+function survey3s_profile_install() {
+  // First, do everything in standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+}
