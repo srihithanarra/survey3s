@@ -4,3 +4,7 @@ sites/*/private
 
 # Ignore configuration files that may contain sensitive information.
 sites/default/settings.php
+
+#Ignore vendor and .idea folders
+vendor/*
+.idea/*
