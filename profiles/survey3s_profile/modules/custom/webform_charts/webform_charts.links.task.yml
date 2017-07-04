@@ -1,0 +1,4 @@
+entity.webform.results_charts:
+  title: 'Charts'
+  route_name: entity.webform.results_charts
+  parent_id: entity.webform.results

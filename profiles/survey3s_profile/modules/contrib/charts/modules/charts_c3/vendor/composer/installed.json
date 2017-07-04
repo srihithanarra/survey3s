@@ -1,0 +1,41 @@
+[
+    {
+        "name": "dthree",
+        "version": "3",
+        "version_normalized": "3.0.0.0",
+        "dist": {
+            "type": "file",
+            "url": "https://d3js.org/d3.v3.min.js",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "dthree",
+        "installation-source": "dist"
+    },
+    {
+        "name": "cthree",
+        "version": "0.4.11",
+        "version_normalized": "0.4.11.0",
+        "dist": {
+            "type": "file",
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "cthree",
+        "installation-source": "dist"
+    },
+    {
+        "name": "cthree/css",
+        "version": "0.4.11",
+        "version_normalized": "0.4.11.0",
+        "dist": {
+            "type": "file",
+            "url": "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css",
+            "reference": null,
+            "shasum": null
+        },
+        "type": "css",
+        "installation-source": "dist"
+    }
+]

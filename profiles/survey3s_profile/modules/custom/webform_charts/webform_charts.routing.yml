@@ -1,0 +1,21 @@
+entity.webform.results_charts:
+  path: '/admin/structure/webform/manage/{webform}/results/charts'
+  defaults:
+    _controller: '\Drupal\webform_charts\Controller\WebformChartsController::index'
+    _title_callback: 'Drupal\webform\Controller\WebformController::title'
+  options:
+    parameters:
+      webform:
+        type: 'entity:webform'
+  requirements:
+    _entity_access: 'webform.submission_view_any'
+    _custom_access: '\Drupal\webform\Access\WebformAccess:checkResultsAccess'
+
+entity.webform.results_charts_add:
+  path: '/admin/structure/webform/manage/{webform}/results/charts/add'
+  defaults:
+    _form: '\Drupal\webform_charts\Form\AddWebformChartForm'
+    _title: 'Add Chart'
+  requirements:
+    _entity_access: 'webform.submission_view_any'
+    _custom_access: '\Drupal\webform\Access\WebformAccess:checkResultsAccess'

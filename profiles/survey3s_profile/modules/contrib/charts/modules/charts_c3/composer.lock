@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1b373c6b879ec393ac931bcdb350988a",
+    "packages": [
+        {
+            "name": "cthree",
+            "version": "0.4.11",
+            "dist": {
+                "type": "file",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "cthree"
+        },
+        {
+            "name": "cthree/css",
+            "version": "0.4.11",
+            "dist": {
+                "type": "file",
+                "url": "https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "css"
+        },
+        {
+            "name": "dthree",
+            "version": "3",
+            "dist": {
+                "type": "file",
+                "url": "https://d3js.org/d3.v3.min.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "dthree"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,9 @@
+name: Webform Result Charts
+type: module
+description: 'Provides charts to analyse webform submissions'
+core: 8.x
+dependencies:
+  - webform
+  - charts
+package: Survey3s
+project: webform_charts

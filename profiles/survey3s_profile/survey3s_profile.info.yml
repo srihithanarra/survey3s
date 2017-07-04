@@ -13,6 +13,7 @@ dependencies:
   - webform_ui
   - config
   - block
+  - webform_charts
 
 themes:
   - seven
