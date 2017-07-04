@@ -16,6 +16,10 @@ entity.webform.results_charts_add:
   defaults:
     _form: '\Drupal\webform_charts\Form\AddWebformChartForm'
     _title: 'Add Chart'
+  options:
+    parameters:
+      webform:
+        type: 'entity:webform'
   requirements:
     _entity_access: 'webform.submission_view_any'
     _custom_access: '\Drupal\webform\Access\WebformAccess:checkResultsAccess'

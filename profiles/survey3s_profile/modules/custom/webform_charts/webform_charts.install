@@ -1,0 +1,49 @@
+<?php
+/**
+ * Implements hook_schema
+ */
+function webform_charts_schema() {
+  $schema['webform_charts'] = [
+    'description' => 'To store chart configurations for webforms',
+    'fields' => [
+      'chart_id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique chart ID.',
+      ],
+      'webform_id' => [
+        'description' => 'The webform id.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'chart_title' => [
+        'description' => 'The chart title.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'chart_type' => [
+        'description' => 'The chart type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'options' => [
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'normal',
+        'description' => 'Serialized array data options to build the chart.',
+      ],
+    ],
+    'primary key' => ['chart_id'],
+    'indexes' => [
+      'webform_id' => ['webform_id'],
+      'chart_id' => ['chart_id'],
+    ],
+  ];
+  return $schema;
+}

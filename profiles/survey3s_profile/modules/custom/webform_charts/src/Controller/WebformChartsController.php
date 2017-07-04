@@ -36,7 +36,8 @@ class WebformChartsController  extends ControllerBase {
   //add chart link
   $charts[] = [
     '#type' => 'link',
-    '#url' => Url::fromRoute('entity.webform.results_charts',array('webform' => $webform)),
+    '#title' => 'Add Chart',
+    '#url' => Url::fromRoute('entity.webform.results_charts',array('webform' => $webform->id())),
   ];
     $library = 'c3';
     $options = [];

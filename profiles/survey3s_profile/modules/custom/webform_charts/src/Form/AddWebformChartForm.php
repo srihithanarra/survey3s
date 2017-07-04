@@ -9,7 +9,7 @@ class AddWebformChartForm extends FormBase{
   public function getFormId() {
     return "add_webform_chart";
   }
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $webform = NULL) {
     $form = [];
     $form['title'] = [
       '#type' => 'textfield',
@@ -22,6 +22,23 @@ class AddWebformChartForm extends FormBase{
       '#title' => 'Chart type',
       '#options' => ['pie' => 'Pie', 'column' => 'Column'],
       '#required' => TRUE,
+    ];
+    $form['x_axis_title'] = [
+      '#type' => 'textfield',
+      '#title' => 'Horizontal Axis Title',
+      '#size' => 10,
+      '#required' => TRUE,
+    ];
+    $form['y_axis_title'] = [
+      '#type' => 'textfield',
+      '#title' => 'Vertical Axis Title',
+      '#size' => 10,
+      '#required' => TRUE,
+    ];
+    $form['#webform_id']  = $webform->id();
+    $form['submit'] = [
+      '#type' => 'submit',
+      '#value' => 'Create Chart',
     ];
     return $form;
   }
