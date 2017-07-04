@@ -1,6 +1,6 @@
 <?php
 
-namespace \Drupal\webform_charts\Form;
+namespace Drupal\webform_charts\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
