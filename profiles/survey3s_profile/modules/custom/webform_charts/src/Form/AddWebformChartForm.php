@@ -2,6 +2,7 @@
 
 namespace Drupal\webform_charts\Form;
 
+use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -40,6 +41,7 @@ class AddWebformChartForm extends FormBase{
       '#type' => 'submit',
       '#value' => 'Create Chart',
     ];
+
     return $form;
   }
   public function validateForm(array &$form, FormStateInterface $form_state) {
@@ -48,5 +50,20 @@ class AddWebformChartForm extends FormBase{
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // TODO: Implement submitForm() method.
+    $webform_id = $form['#webform_id'];
+    //TODO: build searialized data to build the chart
+    $chart_options = "";
+    $connection = Database::getConnection();
+    $connection->insert('webform_charts')->fields(
+      array(
+        'webform_id' => $webform_id,
+        'chart_title' => $form_state->getValue('title'),
+        'chart_type' => $form_state->getValue('chart_type'),
+        'options' => $chart_options,
+      )
+    )->execute();
+    //TODO: check if exception to be catched for DB insert
+    drupal_set_message('Added chart');
+    $form_state->setRedirect('entity.webform.results_charts', array('webform' => $webform_id));
   }
 }
