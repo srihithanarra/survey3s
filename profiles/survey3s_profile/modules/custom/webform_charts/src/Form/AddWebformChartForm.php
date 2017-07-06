@@ -24,17 +24,14 @@ class AddWebformChartForm extends FormBase{
       '#options' => ['pie' => 'Pie', 'column' => 'Column'],
       '#required' => TRUE,
     ];
-    $form['x_axis_title'] = [
-      '#type' => 'textfield',
-      '#title' => 'Horizontal Axis Title',
-      '#size' => 10,
-      '#required' => TRUE,
-    ];
-    $form['y_axis_title'] = [
-      '#type' => 'textfield',
-      '#title' => 'Vertical Axis Title',
-      '#size' => 10,
-      '#required' => TRUE,
+    $webform_elements = [];
+    foreach ($webform->getElementsDecoded() as $key=>$element) {
+      $webform_elements[$key] = $key;
+    }
+    $form['pie_chart_data_element'] = [
+      '#type' => 'select',
+      '#title' => 'Chart data',
+      '#options' => $webform_elements,
     ];
     $form['#webform_id']  = $webform->id();
     $form['submit'] = [
@@ -52,7 +49,7 @@ class AddWebformChartForm extends FormBase{
     // TODO: Implement submitForm() method.
     $webform_id = $form['#webform_id'];
     //TODO: build searialized data to build the chart
-    $chart_options = "";
+    $chart_options = serialize($form_state->getValue('pie_chart_data_element'));
     $connection = Database::getConnection();
     $connection->insert('webform_charts')->fields(
       array(
