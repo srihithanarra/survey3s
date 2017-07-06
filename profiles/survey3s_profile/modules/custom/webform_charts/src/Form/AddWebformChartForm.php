@@ -24,14 +24,21 @@ class AddWebformChartForm extends FormBase{
       '#options' => ['pie' => 'Pie', 'column' => 'Column'],
       '#required' => TRUE,
     ];
+
     $webform_elements = [];
     foreach ($webform->getElementsDecoded() as $key=>$element) {
-      $webform_elements[$key] = $key;
+      $webform_elements[$key] = $element['#title'];
     }
     $form['pie_chart_data_element'] = [
       '#type' => 'select',
-      '#title' => 'Chart data',
+      '#title' => 'Chart data based on',
       '#options' => $webform_elements,
+      '#states' => array(
+        // Show this only if pie chart is selected
+        'visible' => array(
+          ':input[name="chart_type"]' => array('value' => 'pie'),
+        ),
+      ),
     ];
     $form['#webform_id']  = $webform->id();
     $form['submit'] = [
